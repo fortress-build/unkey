@@ -17,6 +17,9 @@ pub struct ListKeysRequest {
 
     /// The pagination cursor indicating the last key that was returned.
     pub cursor: Option<String>,
+
+    /// Whether to revalidate the cache for this request.
+    pub revalidate_cache: Option<bool>,
 }
 
 impl ListKeysRequest {
@@ -45,6 +48,7 @@ impl ListKeysRequest {
             owner_id: None,
             limit: None,
             cursor: None,
+            revalidate_cache: None,
         }
     }
 
